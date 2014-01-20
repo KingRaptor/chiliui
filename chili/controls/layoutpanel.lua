@@ -270,6 +270,10 @@ function LayoutPanel:_AutoArrangeOrdinate(freeSpace)
   local lineSizes = {}
   for i=1,#_lines do
     local first_cell_in_line = _cells[ _lines[i] ]
+      if not first_cell_in_line then
+        Spring.Log(widget:GetInfo().name, LOG.WARNING, "(StackPanel) failed to find first_cell_in_line")
+        return
+      end
     if (self.orientation == "horizontal") then --FIXME
       lineSizes[i] = {i,first_cell_in_line[4]}
     else
