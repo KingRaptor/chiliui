@@ -74,6 +74,7 @@ Control = Object:Inherit{
   skinName        = nil,
 
   drawcontrolv2 = nil, --// disable backward support with old DrawControl gl state (with 2.1 self.xy translation isn't needed anymore)
+  return selfHitTest = nil,
 
   OnResize        = {},
 }
@@ -1355,7 +1356,7 @@ function Control:HitTest(x,y)
     end
   end
 
-  if
+  if (not self.noSelfHitTest) and
 	self.tooltip
 	or (#self.OnMouseDown > 0)
 	or (#self.OnMouseUp > 0)
