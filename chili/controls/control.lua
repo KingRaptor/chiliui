@@ -74,7 +74,7 @@ Control = Object:Inherit{
   skinName        = nil,
 
   drawcontrolv2 = nil, --// disable backward support with old DrawControl gl state (with 2.1 self.xy translation isn't needed anymore)
-  return selfHitTest = nil,
+  noSelfHitTest = nil,
 
   OnResize        = {},
 }
